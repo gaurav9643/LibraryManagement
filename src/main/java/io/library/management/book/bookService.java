@@ -27,4 +27,17 @@ public class bookService {
     public void addBook(book Book){
         books.add(Book);
     }
+
+    public void updateBook(int id,book Book){
+        for (int i = 0; i < books.size(); i++){
+            book B = books.get(i);
+            if(B.getId() == id){
+                books.set(i,Book);
+            }
+        }
+    }
+
+    public void deleteBook(int id){
+        books.removeIf(t -> t.getId() == id);
+    }
 }

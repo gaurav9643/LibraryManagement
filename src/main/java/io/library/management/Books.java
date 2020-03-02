@@ -28,4 +28,16 @@ public class Books {
     void addBook(@RequestBody book Book){
         bookservice.addBook(Book);
     }
+
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/books/{id}")
+    void updateBook(@RequestBody book Book,@PathVariable int id){
+        bookservice.updateBook(id,Book);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/books/{id}")
+    void deleteBook(@PathVariable int id){
+        bookservice.deleteBook(id);
+    }
+
 }
